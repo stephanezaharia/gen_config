@@ -1,0 +1,51 @@
+----
+# May 2021 - Quod Financial
+# YAML: https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
+# Describes all parameters used in our applicatin groups by features
+# Each new parameter added during development phase must be added in this file
+# A parameter can belong to several features
+
+# Versionning: this file is backward compatible. It means that no parameter can be removed
+# but a parameter can be marked as deprecated
+# Assumption for targeted applications: 
+# * All configuration files generated are in XML format
+# * Any parameter not used by the application but present in configuration file is ignored and does not cause any malfunction
+
+# A tool gen_conf can then use this yaml to generate exhaustive configuration files
+# The tool can also later validate an existing configuration
+
+# A parameter as name (usually the last key used in the configuration file)
+# A path composed with file.section.parameter (XML path is separated by dot)
+# A value ...
+# A comment that can be used later to generate automatic documentation
+# A parameter name and a parameter path should NOT contain any DOT
+
+# Only business parameter not related to topology of the installation are added here. 
+# Example 
+#  * nb_max_order_in_book should appear in this file
+#  * list_port: 5600 should NOT appear in this file
+
+# Command line should be something like:
+# qf_gen_config generate --core --market_making --prefix SWED --out .
+
+# Limitations:
+# New files are always generated. Existing file will be overwriten
+
+
+version: 0.1
+features:
+  core:
+    parameters:
+	  
+  market_making:
+    parameters:
+      nb_order_in_book:
+        path: qs.qs.global.nb_order_in_book
+        value: 10000
+        comment: |
+           Maximum of orders in book for the day. If this limit is reached, the system stops
+	     
+	  
+	  
+	  
+	  
