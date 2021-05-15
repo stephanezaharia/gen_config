@@ -36,7 +36,12 @@ version: 0.1
 features:
   core:
     parameters:
-	  
+      p1:
+        path: qs.qs.global.p1
+        value: 10000
+        comment: |
+           Maximum of orders in book for the day. If this limit is reached, the system stops
+   
   market_making:
     parameters:
       nb_order_in_book:
