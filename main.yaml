@@ -49,8 +49,3 @@ features:
         value: 10000
         comment: |
            Maximum of orders in book for the day. If this limit is reached, the system stops
-	     
-	  
-	  
-	  
-	  
